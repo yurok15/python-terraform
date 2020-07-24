@@ -436,7 +436,15 @@ class Terraform(object):
 
         return self.cmd('workspace', 'show',   **kwargs)
 
-    def __exit__(self, exc_type, exc_value, traceback):
+    def list_workspaces(self):
+        """
+        list workspaces
+        :return: workspaces
+        """
+        return self.cmd('workspace', 'list')
+
+
+def __exit__(self, exc_type, exc_value, traceback):
         self.temp_var_files.clean_up()
 
 
